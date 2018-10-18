@@ -1,6 +1,7 @@
 /*
    JavaScript 1 - Inlämingsuppgift 3 - Uppgift 5
-   Frekvenstabell över tärningskast
+   Frekvenstabell över tärningskast - Scriptet genererar 1000 tärningskast
+   och räknar ut hur många gånger varje siffra rullats.
    Andreas Åkerlöf, 2018-10-18
 */
 
@@ -22,12 +23,7 @@ function print() {
     let diceRolls = randomDice(1000);
     let count = [0, 0, 0, 0, 0, 0];
     for (let value in diceRolls) {
-        if (diceRolls[value] == 1) { count[0]++; }
-        else if (diceRolls[value] == 2) { count[1]++; }
-        else if (diceRolls[value] == 3) { count[2]++; }
-        else if (diceRolls[value] == 4) { count[3]++; }
-        else if (diceRolls[value] == 5) { count[4]++; }
-        else if (diceRolls[value] == 6) { count[5]++; }
+        count[diceRolls[value]-1]++;
     }
     console.log(`
         Frekvenstabell över tärningskast.
