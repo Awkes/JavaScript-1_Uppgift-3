@@ -1,13 +1,21 @@
 /*
    JavaScript 1 - Inlämingsuppgift 3 - Uppgift 6
    Scriptet beräknar fakultet av ett inmatat tal mellan 1-1000
-   Andreas Åkerlöf, 2018-10-24
+   Andreas Åkerlöf, 2018-10-30
 */
 
 let tal;
 // Fortsätter fråga efter ett tal tills kravet att talet är mellan 1 och 1000 uppfylls.
-while (!(tal >= 1 && tal <= 1000) || isNaN(tal)) {
-    tal = +prompt("Mata in ett tal mellan 1 och 1000, för att beräkna fakulteten.");
+while (true) {
+    tal = prompt("Mata in ett tal mellan 1 och 1000, för att beräkna fakulteten.");
+    if (tal === null) {                                                                // Trycker man avbryt, skrivs meddelande ut 
+        document.getElementById('fakultet').innerText = 'Program avbrutet';            // och programmet avbryts.
+        break;      
+    }
+    else if (Number(tal) >= 1 && Number(tal) <= 1000) {                                // Om tal är mellan 1-1000 skrivs resultatet 
+        document.getElementById('fakultet').innerText = tal + '! = ' + fakultet(tal);  // ut med hjälp av funktionen fakultet().
+        break;
+    }
 }
 
 // Funktion som räknar ut fakulteten av inmatat tal
@@ -18,6 +26,3 @@ function fakultet(tal) {
     }
     return f;
 }
-
-// Anropar funktionen fakultet() och skriver ut resultatet i paragrafen med id 'fakultet'
-document.getElementById('fakultet').innerText = tal + '! = ' + fakultet(tal);
