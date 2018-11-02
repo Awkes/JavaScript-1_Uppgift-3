@@ -13,7 +13,7 @@ while (true) {
         break;      
     }
     else if (Number(tal) < 1 || Number(tal) > 1000) {                                  // Om tal inte är mellan 1-1000
-        alert('Du måste mata in ett tal mellan 1-1000');                               // kommer ett felmeddelande
+        alert('Du måste mata in ett tal mellan 1-1000');                               // kommer ett felmeddelande.
     }
     else if (fakultet(tal) === Infinity) {                                             // Om resultatet av fakultet är Infinity visas felmeddelande.
         alert('På grund av JavaScripts begränsningar kan inte fakultet räknas ut på talet: '+tal+'.');
